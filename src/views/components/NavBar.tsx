@@ -11,10 +11,33 @@ function NavBar() {
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
 						<li className="nav-item">
-							<a className="nav-link active" aria-current="page" href="/">Home</a>
+							<a
+								className="nav-link active"
+								aria-current="page"
+								href="/"
+								hx-get="/"
+								hx-trigger="click"
+								hx-target="#main-content"
+								hx-select="#main-content"
+								hx-swap="outerHTML swap:0.15s"
+								hx-push-url="true"
+							>
+								Home
+							</a>
 						</li>
 						<li className="nav-item">
-							<a className="nav-link" href="/posts">Blog</a>
+							<a
+								className="nav-link"
+								href="/posts"
+								hx-get="/posts"
+								hx-trigger="click"
+								hx-target="#main-content"
+								hx-select="#main-content"
+								hx-swap="outerHTML swap:0.15s"
+								hx-push-url="true"
+							>
+								Blog
+							</a>
 						</li>
 					</ul>
 					<form className="d-flex" role="search">
