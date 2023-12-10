@@ -34,23 +34,6 @@ const start = async () => {
     res.jsx('SearchPage')
   });
 
-  // search results pagination component
-  app.get('/partials/search-results', async (req, res) => {
-    res.jsx('components/SearchList')
-  });
-
-  // archive pagination component
-  app.get('/partials/archive-list/:collection', async (req, res, next) => {
-    // check if collection exists
-    const collection = payload.collections[req.params.collection];
-
-    if (!collection) {
-      return next();
-    }
-
-    res.jsx(`components/${capitalize(req.params.collection)}ArchiveList`, [`components/ArchiveList`])
-  });
-
   app.get('/:collection', (req, res, next) => {
     // check if collection exists
     const collection = payload.collections[req.params.collection];
