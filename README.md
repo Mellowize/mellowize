@@ -30,6 +30,8 @@ This project is currently in a very early stage of development. Please be aware 
   - HTMX
   - Node
   - TSX Templating Engine
+- Add Page content type (Content type kind of list a "Post", but without an index page, its just collection of content where each one renders at a unique slug/route).
+- Add Payload plugin for specifying page collection, and the posts collections. (so that the server knows which collections to render as pages, and which collection to render post index and post singles. Also, so you can add custom collections that don't render on the frontend automatically).
 - Write Documentation
   - Introduction
   - Quick Start
