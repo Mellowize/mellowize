@@ -1,8 +1,8 @@
-# Payload HTMX Stack
+# Mellowize
 
 ## Overview
 
-Payload HTMX Stack is a proof of concept for a Payload CMS Website using HTMX and Server Side JSX. This project aims to provide a simplified stack for web development, leveraging the power of Payload CMS, HTMX, and other technologies.
+Mellowize is a proof of concept for a Payload CMS Website using HTMX and Server Side JSX. This project aims to provide a simplified stack for web development, while maintaining the developer experience and user experience of modern web applications.
 
 ## Description
 
@@ -12,6 +12,7 @@ This project is currently in a very early stage of development. Please be aware 
 
 - **Simplicity:** The goal is to create a stack that is easy to use and understand, avoiding black magic or special syntax.
 - **Developer Experience:** In the pursuit of simplicity, I wanted to make sure that the developer experience was not compromised. One of the big hurdles was making sure that templating would have auto complete and be type safe. Most major template engines for express do not support this. I adopted JSX and wrote my own templating engine based on React Dom Server Api to achieve this.
+- **User Experience:** SPA application have provided a great user experience, but they have also introduced a lot of complexity to modern web development. This stack aims to provide a similar user experience, but without the problems that SPA applications have introduced. This is achieved by using HTMX to provide a SPA like experience, while still using server side rendering to provide a fast initial load time, and to provide a great SEO experience.
 
 ## Stack
 
