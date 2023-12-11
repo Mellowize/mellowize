@@ -34,7 +34,8 @@ export interface Post {
   content: {
     [k: string]: unknown;
   }[];
-  author: string | User;
+  publishedAt: string;
+  author?: (string | null) | User;
   updatedAt: string;
   createdAt: string;
 }

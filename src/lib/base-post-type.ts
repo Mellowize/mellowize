@@ -35,7 +35,7 @@ const basePostType: Pick<CollectionConfig, 'fields' | 'access'> = {
 			name: 'author',
 			type: 'relationship',
 			label: 'Author',
-			required: true,
+			required: false,
 			relationTo: 'users',
 		},
 	],
