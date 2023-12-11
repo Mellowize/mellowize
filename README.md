@@ -11,7 +11,7 @@ This project is currently in a very early stage of development. Please be aware 
 ## Driving Principles
 
 - **Simplicity:** The goal is to create a stack that is easy to use and understand, avoiding black magic or special syntax.
-- **Developer Experience:** In the pursuit of simplicity, I wanted to make sure that the developer experience was not compromised. One of the big hurdles was making sure that templating would have auto complete and be type safe. Most major template engines for express do not support this. I adopted JSX and wrote our own templating engine based on React Dom Server Api to achieve this.
+- **Developer Experience:** In the pursuit of simplicity, I wanted to make sure that the developer experience was not compromised. One of the big hurdles was making sure that templating would have auto complete and be type safe. Most major template engines for express do not support this. I adopted JSX and wrote my own templating engine based on React Dom Server Api to achieve this.
 
 ## Stack
 
