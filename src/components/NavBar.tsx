@@ -46,7 +46,7 @@ function NavBar(props: NavBarProps) {
 						<li className='nav-item'>
 							{props.user ? (<a className="nav-link" href="/admin">
 								Admin
-							</a>) : (<a className="nav-link" href="/login">
+							</a>) : (<a className="nav-link" href="/admin">
 								Login
 							</a>)}
 						</li>
