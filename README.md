@@ -2,7 +2,7 @@
 
 ## Overview
 
-Mellowize is a proof of concept for a Payload CMS Website using HTMX and Server Side JSX. This project aims to provide a simplified stack for web development, while maintaining the developer experience and user experience of modern web applications.
+The name, Mellowize, comes from the word "Mellow" (meaning pleasantly smooth or soft; free from harshness) and the suffix "-ize" (meaning "to make or become"). Mellowize is a proof of concept for a Payload CMS Website using HTMX and Server Side JSX. This project aims to provide a simplified stack for web development, while maintaining the developer experience and user experience of modern web applications.
 
 ## Description
 
@@ -15,12 +15,10 @@ This project is currently in a very early stage of development. Please be aware 
 - **User Experience:** SPA application have provided a great user experience, but they have also introduced a lot of complexity to modern web development. This stack aims to provide a similar user experience, but without the problems that SPA applications have introduced. This is achieved by using HTMX to provide a SPA like experience, while still using server side rendering to provide a fast initial load time, and to provide a great SEO experience.
 
 ## Stack
-
-- MongoDB
-- NodeJS
-- Express
-- PayloadCMS
+- PayloadCMS (Mongo, Express)
 - HTMX
+- Node
+- TSX Templating Engine
 
 ## Future plans
 
