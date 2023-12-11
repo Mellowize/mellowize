@@ -1,5 +1,5 @@
 import React from 'react';
-import DefaultLayout from '../layouts/DefaultLayout';
+import DefaultLayout from '../components/layouts/DefaultLayout';
 import { page } from '../lib/page';
 
 const HomePage = page({

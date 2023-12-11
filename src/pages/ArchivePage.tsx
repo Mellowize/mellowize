@@ -2,7 +2,7 @@ import payload from "payload";
 import { ZodError, z } from "zod";
 import { HttpError } from "../lib/http-error";
 import express from 'express';
-import DefaultLayout from "../layouts/DefaultLayout";
+import DefaultLayout from "../components/layouts/DefaultLayout";
 import React from "react";
 import { PaginatedDocs } from "payload/database";
 import { BasePostType } from "../lib/base-post-type";
