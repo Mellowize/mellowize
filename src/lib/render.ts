@@ -3,6 +3,7 @@ import { renderToPipeableStream } from "react-dom/server";
 import { HttpError, isHttpError } from "./http-error";
 import { stat } from "fs/promises";
 import path from 'path';
+import { Page, isPage } from "./page";
 
 // add render function to res type
 declare global {
@@ -13,21 +14,12 @@ declare global {
 	}
 }
 
-type Component = {
-	default: (props: any) => React.JSX.Element,
-	getServerSideProps?: (req: express.Request, res: express.Response) => any
-}
-
-function isComponent(obj: any): obj is Component {
-	return obj.default !== undefined
-}
-
-type JSXRendererOptions = {
+export type JSXRendererOptions = {
 	viewDir: string
 }
 
 export const jsxRenderer = (opts: JSXRendererOptions) => {
-	const middleware : express.RequestHandler  = (req, res, next) => {
+	const middleware: express.RequestHandler = (req, res, next) => {
 		// add render function to res
 		res.jsx = async (template: string, fallbacks?: string[]) => {
 			if (fallbacks === undefined) {
@@ -58,21 +50,18 @@ export const jsxRenderer = (opts: JSXRendererOptions) => {
 					throw new HttpError(404, 'Not Found')
 				}
 
-				const component = (await import(foundTemplate));
-
-				if (!isComponent(component)) {
-					throw new Error('Component is missing default export')
+				const page: unknown = (await import(foundTemplate))?.default;
+				if (!isPage(page)) {
+					throw new HttpError(500, 'Internal Server Error. Page is not a valid page')
 				}
-				const props = (component?.getServerSideProps !== undefined) ? await component.getServerSideProps(req, res) : {};
+
+				const props = (page?.getServerSideProps !== undefined) ? await page.getServerSideProps(req, res) : {};
 				res.type('html')
 				renderToPipeableStream(
-					(component as Component).default(props)
+					page.render(props)
 				).pipe(res)
 			} catch (e) {
 				console.error(e)
-
-				console.log(e)
-
 				if (isHttpError(e)) {
 					res.status(e.statusCode).send(e.message)
 				} else {

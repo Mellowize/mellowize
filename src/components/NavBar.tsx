@@ -1,6 +1,10 @@
 import React from 'react';
 
-function NavBar() {
+export type NavBarProps = {
+	user?: Record<string, unknown>;
+}
+
+function NavBar(props: NavBarProps) {
 	return (
 		<nav className="navbar navbar-expand-lg bg-body-tertiary">
 			<div className="container">
@@ -38,6 +42,13 @@ function NavBar() {
 							>
 								Blog
 							</a>
+						</li>
+						<li className='nav-item'>
+							{props.user ? (<a className="nav-link" href="/admin">
+								Admin
+							</a>) : (<a className="nav-link" href="/login">
+								Login
+							</a>)}
 						</li>
 					</ul>
 					<form className="d-flex" role="search">

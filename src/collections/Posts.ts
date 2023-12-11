@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types";
-import basePostType from "../util/base-post-type";
+import basePostType from "../lib/base-post-type";
 
 const Posts: CollectionConfig = {
 	...basePostType,

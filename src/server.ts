@@ -1,13 +1,13 @@
 import express from 'express'
 import payload from 'payload'
-import { jsxRenderer } from './util/render';
+import { jsxRenderer } from './lib/render';
 import path from 'path'
 
 require('dotenv').config()
 const app = express()
 
 app.use(jsxRenderer({
-  viewDir: path.resolve(__dirname, 'views')
+  viewDir: path.resolve(__dirname, 'pages')
 }));
 
 function capitalize(str: string) {

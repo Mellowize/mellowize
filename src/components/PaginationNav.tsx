@@ -3,8 +3,8 @@ import React from 'react';
 function PaginationNav(props: { hasPrevPage: boolean, hasNextPage: boolean, page: number, totalPages: number, paginationContainer: string }) {
 	const previousClasses = ['page-link', (props.hasPrevPage ? '' : 'disabled')].join(' ');
 	const nextClasses = ['page-link', (props.hasNextPage ? '' : 'disabled')].join(' ');
-	const previousLink = `?page${(props.page ?? 1) - 1}`;
-	const nextLink = `?page${(props.page ?? 1) + 1}`;;
+	const previousLink = `?page=${(props.page ?? 1) - 1}`;
+	const nextLink = `?page=${(props.page ?? 1) + 1}`;;
 
 	const hxBaseAttributes = {
 		"hx-trigger": "click",
@@ -21,6 +21,7 @@ function PaginationNav(props: { hasPrevPage: boolean, hasNextPage: boolean, page
 						className={previousClasses}
 						href={previousLink}
 						hx-get={previousLink}
+						hx-push-url={previousLink}
 						{...hxBaseAttributes}
 					>
 						Previous
@@ -34,6 +35,7 @@ function PaginationNav(props: { hasPrevPage: boolean, hasNextPage: boolean, page
 								className={`page-link ${props.page === i + 1 ? 'active' : ''}`}
 								href={`?page=${i + 1}`}
 								hx-get={`?page=${i + 1}`}
+								hx-push-url={`?page=${i + 1}`}
 								{...hxBaseAttributes}
 							>
 								{i + 1}
@@ -46,6 +48,7 @@ function PaginationNav(props: { hasPrevPage: boolean, hasNextPage: boolean, page
 						href={nextLink}
 						className={nextClasses}
 						hx-get={`?page=${(props.page ?? 1) + 1}`}
+						hx-push-url={nextLink}
 						{...hxBaseAttributes}
 					>
 						Next
