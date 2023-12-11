@@ -6,7 +6,7 @@ Payload HTMX Stack is a proof of concept for a Payload CMS Website using HTMX an
 
 ## Description
 
-This project is currently in [state of development], featuring [mention key features or components]. Please be aware of any existing limitations.
+This project is currently in a very early stage of development. Please be aware of any existing limitations.
 
 ## Driving Principles
 
